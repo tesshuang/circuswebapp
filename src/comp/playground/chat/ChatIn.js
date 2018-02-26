@@ -44,7 +44,7 @@ class ChatIn extends Component {
            return(
                <div key={i} className="msg_all">
                     
-                    <img src={require("../../"+this.props.avatarbank[obj.avatar])} alt="avatar0" className=" msg_avt"/>
+                    <img src={this.props.avatarbank[obj.avatar]} alt="avatar0" className=" msg_avt"/>
                     <div className=" msg_detail">
                         <span className='msg_name'>{obj.name}</span>
                         <span className='msg_msg'>{obj.msg}</span>
