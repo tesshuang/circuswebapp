@@ -48,7 +48,7 @@ class LetsChat extends Component {
                 avatar:this.state.usravatar
             }
             
-            this.socket = mySocket("http://localhost:4005");
+            this.socket = mySocket("https://circussocket.herokuapp.com/");
             console.log(usrobj);
             this.socket.emit("usrinfo", usrobj);
             
