@@ -34,7 +34,7 @@ class StiBoard extends Component {
     componentDidMount(){
 
         
-        this.socket = mySocket("http://localhost:4006");
+        this.socket = mySocket("https://midautumnfestivalcard.herokuapp.com/");
         
         this.socket.on("stickeruser", (data)=>{
            this.setState({
