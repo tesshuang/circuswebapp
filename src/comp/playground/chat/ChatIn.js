@@ -7,6 +7,7 @@ class ChatIn extends Component {
         this.handleMsg = this.handleMsg.bind(this);
         this.sendMsg = this.sendMsg.bind(this);
         this.leaveChat = this.leaveChat.bind(this);
+        this.userLeave = this.userLeave.bind(this);
     }
     
     componentDidMount(){
@@ -21,14 +22,18 @@ class ChatIn extends Component {
     }
     
     leaveChat(arg){
-        /*this.props.leaveChat();*/
-        this.props.displaySection(arg);
+        this.userLeave();
+        this.props.leaveChat(arg);
+        /*this.props.displaySection(arg);*/
+    }
+    userLeave(){
+        this.props.userLeave();
     }
     render() {
         var allusers = this.props.allusers.map((obj,i)=>{
             return (
                 <div key={i}>
-                    <img src={require("../../"+this.props.avatarbank[obj.avatar])} alt="avatar0" className="on_avt"/>
+                    <img src={this.props.avatarbank[obj.avatar]} alt="avatar0" className="on_avt"/>
                     <span className="onAnimal"> {obj.name}</span>
                 </div>
             )
@@ -39,10 +44,10 @@ class ChatIn extends Component {
            return(
                <div key={i} className="msg_all">
                     
-                    <img src={require("../../"+this.props.avatarbank[obj.avatar])} alt="avatar0" className="msg_avt"/>
-                    <div className="msg_detail">
-                        <h4>{obj.name}</h4>
-                        <p>{obj.msg}</p>
+                    <img src={require("../../"+this.props.avatarbank[obj.avatar])} alt="avatar0" className=" msg_avt"/>
+                    <div className=" msg_detail">
+                        <span className='msg_name'>{obj.name}</span>
+                        <span className='msg_msg'>{obj.msg}</span>
                     </div>
                     
                </div>

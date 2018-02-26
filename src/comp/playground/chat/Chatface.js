@@ -29,14 +29,14 @@ class Chatface extends Component {
             return(
                 
                 <span key={i}>
-                    <img src={require("../../"+obj)} alt="avatar0{i}" style={{width:80, height:80}} onClick={this.handleAva.bind(this,i)} className="avt_cont"/>
+                    <img src={obj} alt="avatar0{i}" style={{width:80, height:80}} onClick={this.handleAva.bind(this,i)} className="avt_cont"/>
                 </span>
             )
         })
         return (
           <div className="chatface_cont">
             <div className="wrapper">
-            <img src={require("../../images/clown_half.png")} alt="half_clown" className="half_clown"/>
+            <img src={require("../../../images/chat/clown_half.png")} alt="half_clown" className="half_clown"/>
             <input type="text" placeholder="Please type your name" onChange={this.handleName} className="input_name"/>
             <h4>Please select your avatar.</h4>
             <div>

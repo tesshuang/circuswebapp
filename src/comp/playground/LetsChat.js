@@ -14,11 +14,11 @@ class LetsChat extends Component {
             mymsg:"",
             allmsg:[],
             avatarbank:[
-                "images/avt1.svg",
-                "images/avt2.svg",
-                "images/avt3.svg",
-                "images/avt4.svg",
-                "images/avt5.svg"
+                require("../../images/chat/avt1.svg"),
+                require("../../images/chat/avt2.svg"),
+                require("../../images/chat/avt3.svg"),
+                require("../../images/chat/avt4.svg"),
+                require("../../images/chat/avt5.svg")
             ]
             
         }
@@ -29,11 +29,13 @@ class LetsChat extends Component {
         this.handleMsg = this.handleMsg.bind(this);
         this.sendMsg = this.sendMsg.bind(this);
         this.leaveChat = this.leaveChat.bind(this);
+        this.userLeave = this.userLeave.bind(this);
     }
     
-    componentDidMount(){
-        
+    componentWillUnmount(){
+        this.socket.disconnect();
     }
+    
     joinChat(){
         if(this.state.usrname !== ""){
             this.setState({
@@ -46,7 +48,7 @@ class LetsChat extends Component {
                 avatar:this.state.usravatar
             }
             
-            this.socket = mySocket("https://circussocket.herokuapp.com/");
+            this.socket = mySocket("http://localhost:4005");
             console.log(usrobj);
             this.socket.emit("usrinfo", usrobj);
             
@@ -70,11 +72,16 @@ class LetsChat extends Component {
         }
         
     }
-    
-    leaveChat(arg){
-        this.props.leaveChat();
+    userLeave(){
+        console.log("leave chat room");
         /*this.socket.disconnect();*/
-        /*this.props.displaySection(arg);*/
+/*        this.socket = mySocket("http://localhost:4005");
+        var leftuser = this.state.usrname;
+        this.socket.emit("usrleft", leftuser);*/
+    }
+    leaveChat(arg){
+        
+        this.props.displaySection(arg);
     }
     
     handleName(evt){
@@ -126,7 +133,8 @@ class LetsChat extends Component {
                             sendMsg={this.sendMsg}
                             allmsg={this.state.allmsg}
                             avatarbank={this.state.avatarbank}
-                            leaveChat={this.leaveChat}/>
+                            leaveChat={this.leaveChat}
+                            userLeave={this.userLeave}/>
                 </div>
             )
         }
