@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import mySocket from 'socket.io-client';
 import ConFace from './contest/ConFace';
 import ConPlay from './contest/ConPlay';
 
