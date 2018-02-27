@@ -45,13 +45,13 @@ class MidGround extends Component {
         }else if(this.state.playset === 3){
             comp = (
                     <div>
-                        <TriviaContest displaySection={this.displaySection}/>
+                        <PizzaEater displaySection={this.displaySection}/>
                     </div>
                    )
         }else if(this.state.playset === 4){
             comp = (
                     <div>
-                        <PizzaEater displaySection={this.displaySection}/>
+                        <TriviaContest displaySection={this.displaySection}/>
                     </div>
                    )
         }
