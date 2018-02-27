@@ -22,10 +22,37 @@ class TriviaContest extends Component {
         this.leaveContest = this.leaveContest.bind(this);
         this.handleAva = this.handleAva.bind(this);
     }
-    joinCon(){
-        this.setState({
-            joincontest:true
+    joinCon(roomString){
+        
+        
+        this.socket = mySocket("http://localhost:4007");
+        
+        this.socket.emit("joinroom", roomString);
+        
+        this.socket.on("userjoined", (data)=>{
+            this.setState({
+                conusers:data
+            })
+        });
+        
+        this.socket.on("waiting",()=>{
+            alert("waiting for your competitor");
+            this.setState({
+                joincontest:true
+            });
+        });
+        
+        this.socket.on("startgame",()=>{
+            alert("Let's start the game");
+            
+            this.setState({
+                joincontest:true
+            });
+        });
+        this.socket.on("toomany",()=>{
+            alert("The room is full.");
         })
+        
     }
     
     handleName(evt){

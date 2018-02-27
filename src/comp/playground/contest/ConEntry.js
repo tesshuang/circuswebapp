@@ -13,10 +13,10 @@ class ConEntry extends Component {
 
         return (
           <div>
-            <button onClick={this.props.joinCon}>GENERAL</button>
-            <button onClick={this.props.joinCon}>D3</button>
-            <button onClick={this.props.joinCon}>GYM</button>
-            <button onClick={this.props.joinCon}>LIBRARY</button>
+            <button onClick={this.props.joinCon.bind(this,"general")}>GENERAL</button>
+            <button onClick={this.props.joinCon.bind(this,"d3")}>D3</button>
+            <button onClick={this.props.joinCon.bind(this,"gym")}>GYM</button>
+            <button onClick={this.props.joinCon.bind(this,"library")}>LIBRARY</button>
             
           </div>
         );
