@@ -313,3 +313,27 @@
   opacity: 1;
   cursor: pointer;
 }
+
+.cont_left{
+    display: inline-block;
+    width: 20vw;
+    height: 100vh;
+    background-color: #fdadba;
+    float: left;
+}
+
+.cont_center{
+    display: inline-block;
+    width: 60vw;
+    height: 100vh;
+    background-color: #dbdbdb;
+    
+}
+
+.cont_right{
+     display: inline-block;
+    width: 20vw;
+    height: 100vh;
+    background-color: #4f4e4b;
+    float:right;
+}
