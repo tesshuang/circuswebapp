@@ -25,7 +25,7 @@ class TriviaContest extends Component {
     joinCon(roomString){
         
         
-        this.socket = mySocket("http://localhost:4007");
+        this.socket = mySocket("https://contsocket.herokuapp.com/");
         
         this.socket.emit("joinroom", roomString);
         
