@@ -17,16 +17,16 @@ class NewSections extends Component {
         return (
           <div className="scaling-svg-container2">
             <div className="playwrapper">
-                <div className="container">
-                    <img className="image" src={require("../../images/session/clown.png")} alt="playground1" onClick={this.displaySection.bind(this,1)}/>
+                <div className="container" onClick={this.displaySection.bind(this,1)}>
+                    <img className="image" src={require("../../images/session/clown.png")} alt="playground1" />
 
                     <div className="middle">
                         <div className="text">CHAT ROOM</div>
                     </div>
                 </div>
         
-                <div className="container">
-                    <img  className="image" src={require("../../images/session/elephant.png")} alt="playground2" onClick={this.displaySection.bind(this,2)}/>
+                <div className="container" onClick={this.displaySection.bind(this,2)}>
+                    <img  className="image" src={require("../../images/session/elephant.png")} alt="playground2" />
 
                     <div className="middle">
                         <div className="text">STICKERS WALL</div>
@@ -34,16 +34,16 @@ class NewSections extends Component {
                 </div>
 
 
-                <div className="container">
-                    <img  className="image" src={require("../../images/session/pizza.png")} alt="playground3" onClick={this.displaySection.bind(this,3)}/>
+                <div className="container" onClick={this.displaySection.bind(this,3)}>
+                    <img  className="image" src={require("../../images/session/pizza.png")} alt="playground3" />
                     <div className="middle">
                         <div className="text">PIZZA EATER</div>
                     </div>
                 </div>
 
 
-                <div className="container">
-                    <img  className="image" src={require("../../images/session/rabbit.png")} alt="playground4" onClick={this.displaySection.bind(this,4)}/>
+                <div className="container" onClick={this.displaySection.bind(this,4)}>
+                    <img  className="image" src={require("../../images/session/rabbit.png")} alt="playground4" />
                     <div className="middle">
                         <div className="text">MAGICAL QUIZ</div>
                     </div>

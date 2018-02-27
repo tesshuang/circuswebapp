@@ -100,14 +100,10 @@ class Landing extends Component {
             
             setTimeout(this.changeView, 3500);
             
-        }else if(this.state.seClick === true && this.state.hiClick1 === false && this.state.hiClick2 === true){
-            alert('check out more about our developer.')
-        }else if(this.state.seClick === true && this.state.hiClick1 === true && this.state.hiClick2 === false){
-            alert('check out more about our designer.')
-        }else if(this.state.seClick === false && this.state.hiClick1 === false && this.state.hiClick2 === false){
+        }else if(this.state.seClick === true && this.state.hiClick1 === false || this.state.hiClick2 === false){
+            alert('check out more about our designer or our developer.')
+        }else if(this.state.seClick === false && this.state.hiClick1 === true && this.state.hiClick2 === true){
             alert('find out the secret key to unlock the gate.')
-        }else if(this.state.seClick === true && this.state.hiClick1 === false && this.state.hiClick2 === false){
-            alert('find out more about our team.')
         }
     }
     render() {
