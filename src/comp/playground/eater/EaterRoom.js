@@ -13,10 +13,22 @@ class EaterRoom extends Component {
     render() {
 
         return (
-          <div>
-            <button onClick={this.props.eaterDisplay.bind(this,2)}>Room1</button>
-            <button onClick={this.props.eaterDisplay.bind(this,2)}>Room2</button>
-            <button onClick={this.props.eaterDisplay.bind(this,2)}>Room3</button>
+          <div className="eater_cont">
+            <div className="wrapper">
+                <h4>Choose a room</h4>
+                <button className="pizzabtn" onClick={this.props.eaterDisplay.bind(this,2)}>
+                <img className="btnimg" src={require("../../../images/eater/meat.png")} alt="pizzaslice"/>
+                
+            </button>
+            <button className="pizzabtn" onClick={this.props.eaterDisplay.bind(this,2)}>
+                <img className="btnimg" src={require("../../../images/eater/vege.png")} alt="pizzaslice"/>
+                
+            </button>
+            <button className="pizzabtn" onClick={this.props.eaterDisplay.bind(this,2)}>
+                <img className="btnimg" src={require("../../../images/eater/cheese.png")} alt="pizzaslice"/>
+                
+            </button>
+            </div>
           </div>
         );
     }

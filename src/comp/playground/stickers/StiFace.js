@@ -20,10 +20,12 @@ class StiFace extends Component {
     render() {
 
         return (
-          <div>
-            StiFace
-            <input type="text" placeholder="tell us your name" onChange={this.handleName}/>
-            <button onClick={this.joinSticker}>Check it out!</button>
+          <div className="stiker_cont">
+            <div className="wrapper">
+            <img src={require("../../../images/stickers/eleicon.png")} alt="half_clown" className="eleicon"/>
+            <input className="input_name" type="text" placeholder="tell us your name" onChange={this.handleName}/><br/>
+            <button className="join_btn" onClick={this.joinSticker}>Check it out!</button>
+            </div>
           </div>
         );
     }
