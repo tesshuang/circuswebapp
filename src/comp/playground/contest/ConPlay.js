@@ -10,7 +10,16 @@ class ConPlay extends Component {
     }
 
     render() {
-        
+        var comp = null;
+        if(this.props.conusers.length >= 2){
+            comp= (
+                <div>
+                    <h2>Player2</h2>
+                    <p>{this.props.conusers[1].conname}</p>
+                    <img src={this.props.playbank[this.props.conusers[1].conava]} height={50} alt="player"/>
+                </div>
+            )
+        }
         return (
           <div>
             <div className="cont_left">
@@ -23,11 +32,7 @@ class ConPlay extends Component {
             <div className="cont_center">
                 <h2>LET US PLAY</h2>
             </div>
-            <div className="cont_right">
-                <h2>Player2</h2>
-                <p>name</p>
-                <p>IMAGE</p>
-            </div>
+            {comp}
           </div>
         );
     }
