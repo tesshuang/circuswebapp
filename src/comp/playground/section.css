@@ -70,12 +70,18 @@
 }
 
 .join_btn{
+    opacity: 1;
     display: block;
     margin: 0 auto;
     border: 5px solid black;
     padding: 10px 30px 10px 30px;
     font-size: 16pt;
     font-weight: bold;
+}
+
+.join_btn:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 .chat_room{
@@ -276,21 +282,29 @@
   right:50%; 
 }
 .playwrapper{
- padding-top: 200px;
-  padding-bottom: 200px;
+ width: 100%;
+ height: 50vh;
+ position: absolute;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+  
 
 }
 .container {
     position: relative;
     width: 200px;
     display: inline-block;
+    margin-left: 5em;
     
 }
 
 .image {
   opacity: 1;
   display: block;
-  width: 200px;
+  width: 15vw;
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
@@ -305,6 +319,8 @@
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
+
+
 .container:hover .image {
   opacity: 0.3;
   cursor: pointer;
@@ -336,4 +352,54 @@
     height: 100vh;
     background-color: #4f4e4b;
     float:right;
+}
+
+/*sticer wall*/
+.stiker_cont{
+    background-color: #F4EACB;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.eleicon{
+    width: 250px;
+    height: auto;
+}
+
+/*pizza eater*/
+.eater_cont{
+    background-color: #55CEC5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.pizzaslice {
+    width: 190px;
+    height: auto;
+}
+
+.pizzabtn {
+    background-color: transparent;
+    border: none;
+    width: 200px;
+    margin: 3em;
+    display: inline-block;
+}
+
+.pizzabtn:hover {
+    cursor: pointer;
+}
+
+.btnimg {
+    width: 200px;
+    height: auto;
+}
+
+.btnimg:hover {
+    cursor: pointer;
 }
