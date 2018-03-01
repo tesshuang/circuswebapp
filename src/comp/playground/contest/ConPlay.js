@@ -32,7 +32,9 @@ class ConPlay extends Component {
             <div className="cont_center">
                 <h2>LET US PLAY</h2>
             </div>
-            {comp}
+            <div className="cont_right">
+                {comp}
+            </div> 
           </div>
         );
     }
