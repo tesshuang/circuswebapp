@@ -16,15 +16,15 @@ class EaterRoom extends Component {
           <div className="eater_cont">
             <div className="wrapper">
                 <h4>Choose a room</h4>
-                <button className="pizzabtn" onClick={this.props.eaterDisplay.bind(this,2)}>
+                <button className="pizzabtn" onClick={this.props.joinPizza.bind(this,"meatRoom")}>
                 <img className="btnimg" src={require("../../../images/eater/meat.png")} alt="pizzaslice"/>
                 
             </button>
-            <button className="pizzabtn" onClick={this.props.eaterDisplay.bind(this,2)}>
+            <button className="pizzabtn" onClick={this.props.joinPizza.bind(this,"vegeRoom")}>
                 <img className="btnimg" src={require("../../../images/eater/vege.png")} alt="pizzaslice"/>
                 
             </button>
-            <button className="pizzabtn" onClick={this.props.eaterDisplay.bind(this,2)}>
+            <button className="pizzabtn" onClick={this.props.joinPizza.bind(this,"pizzaRoom")}>
                 <img className="btnimg" src={require("../../../images/eater/cheese.png")} alt="pizzaslice"/>
                 
             </button>
