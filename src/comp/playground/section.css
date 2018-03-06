@@ -186,7 +186,8 @@
     width: 30vw;
     height: 100vh;
     float: left;
-    background-color:cadetblue;
+    background-color:#55CEC5;
+    text-align: center;
 }
 .sti_display{
     width: 70vw;
@@ -194,6 +195,7 @@
     float: right;
     cursor: none;
     background-color: beige;
+    text-align: center;
 }
 .myImage{
     height: 50px;
@@ -209,6 +211,7 @@
 .group{ 
   position:relative; 
   margin-bottom:45px; 
+  text-align: center;
 }
 
 .imgsize_input{

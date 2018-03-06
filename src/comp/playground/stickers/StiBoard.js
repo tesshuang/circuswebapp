@@ -190,7 +190,7 @@ class StiBoard extends Component {
         return (
           <div>
             <div className="sti_control">
-            Hi,{this.props.stiname}! Welcome to the Sticker Room.
+            <h2>Hi,{this.props.stiname}! Welcome to <br/>the Sticker Room.</h2>
             <br/><br/>
             {allimgs}
             <br/>
@@ -199,14 +199,14 @@ class StiBoard extends Component {
             <div className="group">      
               <input type="number" className="imgsize_input" placeholder="eg.70" onKeyPress={this.updateSize}/>
               <span className="bar"></span>
-              <label className="mlabel">Adjust Image Size</label>
+              <label className="mlabel">Adjust Image Size, press enter to change</label>
             </div>
             <br/>
             
             <button className="leave_btn" onClick={this.leaveSticker.bind(this,0)}>Leave the Room</button>
             </div>
             <div ref="stiDisplay" className="sti_display">
-            playground
+            <h2>Playground</h2>
             {allsusers}
             {allstickers}
             </div>
