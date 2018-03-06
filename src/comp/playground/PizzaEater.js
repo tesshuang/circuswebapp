@@ -14,8 +14,8 @@ class PizzaEater extends Component {
             gameperson:'',
             gameava:0,
             gamebank:[
-                require("../../images/boy01.svg"),
-                require("../../images/girl01.svg")
+                require("../../images/eater/pizza1.svg"),
+                require("../../images/eater/eater.svg")
             ],
             gameusers:[]
         }
@@ -27,9 +27,9 @@ class PizzaEater extends Component {
         this.joinPizza = this.joinPizza.bind(this);
     }
     
-    /*componentWillUnmount(){
+    componentWillUnmount(){
         this.socket.disconnect();
-    }*/
+    }
     
     eaterDisplay(arg){
         this.setState({
@@ -62,7 +62,8 @@ class PizzaEater extends Component {
     
     handleAva(arg){
         this.setState({
-            gameava:arg
+            gameava:arg,
+            eaterChange:3
         })
     }
     

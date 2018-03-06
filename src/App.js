@@ -19,7 +19,7 @@ class App extends Component {
     }
     render() {
         var comp = null;
-        if(this.state.midtoggle === false){
+        if(this.state.midtoggle === true){
             comp = <Landing changeView={this.changeView}/>;
         }else{
             comp = <MidGround />;

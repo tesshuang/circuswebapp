@@ -35,17 +35,21 @@ class ConFace extends Component {
         }
         var playavt = this.props.playbank.map((obj,i)=>{
             return(
-                <img key={i} height={50} src={obj} alt="player avatart" onClick={this.props.handleAva.bind(this,i)}/> 
+                <img className="quiz_avt" key={i} width={150} src={obj} alt="player avatart" onClick={this.props.handleAva.bind(this,i)}/> 
             )
            
         });
         return (
-          <div>
-            <p>Check your knowledge about BCIT</p>
-            {playavt}
-            <br/>
-            <input type="text" placeholder="tell us your name" onKeyPress={this.checkEntry} onChange={this.props.handleName}/>
-            {comp}
+          <div className="quiz_cont">
+            <div className="wrapper">
+                <h2>Check your knowledge about BCIT</h2>
+                <h4>Please select your avatar</h4>
+                {playavt}
+                <br/><br/>
+                <input className="input_name" type="text" placeholder="Tell us your name, press enter to continue" onKeyPress={this.checkEntry} onChange={this.props.handleName}/>
+                <br/>
+                {comp}
+            </div>
           </div>
         );
     }

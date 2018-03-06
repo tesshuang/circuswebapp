@@ -13,11 +13,11 @@ class EaterGame extends Component {
     render() {
 
         return (
-          <div>
-            <p>Let's start the game.</p>
+          <div className="eater_game">
+            <h1 className="title">Let's start the game.</h1>
             {this.props.gameperson}
-            <img src={this.props.gamebank[this.props.gameava]} height={50} alt="player"/>
-            <button onClick={this.props.leaveRoom.bind(this,0)}>Leave the Room</button>
+            <img src={this.props.gamebank[this.props.gameava]} height={100} alt="player"/>
+            <button className="leave_btn" onClick={this.props.leaveRoom.bind(this,0)}>Leave the Room</button>
           </div>
         );
     }
