@@ -16,7 +16,7 @@ class ConPlay extends Component {
                 <div>
                     <h2>Player2</h2>
                     <p>{this.props.conusers[1].conname}</p>
-                    <img src={this.props.playbank[this.props.conusers[1].conava]} height={50} alt="player"/>
+                    <img src={this.props.playbank[this.props.conusers[1].conava]} width={150} alt="player"/>
                 </div>
             )
         }
