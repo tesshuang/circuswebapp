@@ -11,10 +11,10 @@ class TriviaContest extends Component {
             playname:'',
             playava:0,
             playbank:[
-                require("../../images/boy01.svg"),
-                require("../../images/boy02.svg"),
-                require("../../images/girl01.svg"),
-                require("../../images/girl02.svg")
+                require("../../images/quiz/a1.svg"),
+                require("../../images/quiz/a2.svg"),
+                require("../../images/quiz/a3.svg"),
+                require("../../images/quiz/a4.svg")
             ],
             conusers:[],
             showgame:false,

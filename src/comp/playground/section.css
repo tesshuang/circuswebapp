@@ -39,7 +39,7 @@
       align-items: center;
 }
 
-.wrapper h4{
+.wrapper h2, h4{
     text-align: center;
 }
 
@@ -106,6 +106,12 @@
     left: 35px;
     bottom: 30px;
 }
+
+.leave_btn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
 .chat_box{
     float: right;
     text-align: left;
@@ -180,7 +186,8 @@
     width: 30vw;
     height: 100vh;
     float: left;
-    background-color:cadetblue;
+    background-color:#55CEC5;
+    text-align: center;
 }
 .sti_display{
     width: 70vw;
@@ -188,6 +195,7 @@
     float: right;
     cursor: none;
     background-color: beige;
+    text-align: center;
 }
 .myImage{
     height: 50px;
@@ -203,6 +211,7 @@
 .group{ 
   position:relative; 
   margin-bottom:45px; 
+  text-align: center;
 }
 
 .imgsize_input{
@@ -334,15 +343,17 @@
     display: inline-block;
     width: 20vw;
     height: 100vh;
-    background-color: #fdadba;
+    background-color: #F753AA;
     float: left;
+    text-align: center;
 }
 
 .cont_center{
     display: inline-block;
     width: 60vw;
     height: 100vh;
-    background-color: #dbdbdb;
+    background-color: #DBDBDB;
+    text-align: center;
     
 }
 
@@ -350,8 +361,9 @@
      display: inline-block;
     width: 20vw;
     height: 100vh;
-    background-color: #4f4e4b;
+    background-color: #55CEC5;
     float:right;
+    text-align: center;
 }
 
 /*sticer wall*/
@@ -374,8 +386,8 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-      justify-content: center;
-      align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .pizzaslice {
@@ -402,4 +414,36 @@
 
 .btnimg:hover {
     cursor: pointer;
+}
+
+.eater_game {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../images/eater/pgbg.svg);
+    background-size: cover;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+    padding: 1em;
+}
+
+/*quiz*/
+.quiz_cont {
+    background-color: #DBDBDB;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz_avt:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.btn_wrapper {
+    text-align: center;
 }
