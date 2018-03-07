@@ -16,13 +16,16 @@ class TriviaContest extends Component {
                 require("../../images/girl01.svg"),
                 require("../../images/girl02.svg")
             ],
-            conusers:[]
+            conusers:[],
+            showgame:false,
+            roomstring:""
         }
         
         this.joinCon = this.joinCon.bind(this);
         this.handleName = this.handleName.bind(this);
         this.leaveContest = this.leaveContest.bind(this);
         this.handleAva = this.handleAva.bind(this);
+        this.dismissHead = this.dismissHead.bind(this);
     }
     componentWillUnmount(){
         this.socket.disconnect();
@@ -37,27 +40,41 @@ class TriviaContest extends Component {
             }
         }
         
+         this.setState({
+            roomstring:roomString
+        })
+         
         this.socket = mySocket("https://contsocket.herokuapp.com/");
         
         this.socket.emit("joinroom", usrobj);
         
-        this.socket.on("userjoined", (data)=>{
+        /*this.socket.on("userjoined", (data)=>{
             this.setState({
                 joincontest:true,
                 conusers:data
             })
             console.log(data);
-        });
+        });*/
         
-        this.socket.on("waiting",()=>{
+        this.socket.on("waiting",(data)=>{
             alert("waiting for your competitor");
-
+            this.setState({
+                joincontest:true,
+                 conusers:data
+            });
+            
         });
         
-        this.socket.on("startgame",()=>{
+        this.socket.on("startgame",(data)=>{
             alert("Let's start the game");
-
+            this.setState({
+                joincontest:true,
+                conusers:data,
+                showgame:true
+            });
+            console.log(data);
         });
+        
         this.socket.on("toomany",()=>{
             alert("The room is full.");
             /*this.setState({
@@ -82,6 +99,12 @@ class TriviaContest extends Component {
     leaveContest(arg){
         this.props.displaySection(arg);
     }
+    
+    dismissHead(){
+        this.setState({
+            showgame:false
+        })
+    }
     render() {
         var comp = null;
         if(this.state.joincontest === false){
@@ -103,7 +126,10 @@ class TriviaContest extends Component {
                             playava={this.state.playava}
                             conusers={this.state.conusers}
                             playbank={this.state.playbank}
-                            leaveContest={this.leaveContest}/>
+                            leaveContest={this.leaveContest}
+                            showgame={this.state.showgame}
+                            dismissHead={this.dismissHead}
+                            roomstring={this.state.roomstring}/>
                 </div>
             )
         }
