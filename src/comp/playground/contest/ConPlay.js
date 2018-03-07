@@ -14,7 +14,7 @@ class ConPlay extends Component {
     }
 
     startGame(){
-        fetch('/getquiz/'+this.props.roomstring,{
+        fetch('https://contestdata.herokuapp.com/getquiz/'+this.props.roomstring,{
             method:"GET",
             headers: new Headers({
                 'Content-Type': 'application/json'
