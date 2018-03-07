@@ -78,7 +78,7 @@ class ConPlay extends Component {
           <div>
             <div className="cont_left">
                 <h2>Player1</h2>
-                <p>{this.props.playname}</p>
+                <p>{this.props.conusers[0].conname}</p>
             
                 <img src={this.props.playbank[this.props.conusers[0].conava]} width={150} alt="player"/>
                 <button className="leave_btn" onClick={this.props.leaveContest.bind(this,0)}>Leave the Room</button>
