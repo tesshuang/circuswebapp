@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import mySocket from 'socket.io-client';
+import Connect from '../Connect.js';
 
 class ConPlay extends Component {
     constructor(props){
@@ -12,9 +14,13 @@ class ConPlay extends Component {
         this.changeQuestions = this.changeQuestions.bind(this);
         
     }
-
+    
+    componentDidMount(){
+        this.socket = mySocket(Connect.local4);
+    }
+    
     startGame(){
-        fetch('https://contestdata.herokuapp.com/getquiz/'+this.props.roomstring,{
+/*        fetch('https://contestdata.herokuapp.com/getquiz/'+this.props.roomstring,{
             method:"GET",
             headers: new Headers({
                 'Content-Type': 'application/json'
@@ -27,7 +33,8 @@ class ConPlay extends Component {
             this.setState({
               allquestion:data,
             })
-        });
+        });*/
+        this.socket.emit("getquiz",this.props.roomstring);
         this.props.dismissHead();
     }
     

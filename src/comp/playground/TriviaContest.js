@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import mySocket from 'socket.io-client';
 import ConFace from './contest/ConFace';
 import ConPlay from './contest/ConPlay';
+import Connect from  './Connect.js';
 
 class TriviaContest extends Component {
     constructor(props){
@@ -44,7 +45,7 @@ class TriviaContest extends Component {
             roomstring:roomString
         })
          
-        this.socket = mySocket("https://contsocket.herokuapp.com/");
+        this.socket = mySocket(Connect.local4);
         
         this.socket.emit("joinroom", usrobj);
         
