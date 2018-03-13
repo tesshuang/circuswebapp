@@ -35,6 +35,13 @@ class ConPlay extends Component {
             })
         });*/
         this.socket.emit("getquiz",this.props.roomstring);
+        this.socket.on("sendquiz",(data)=>{
+            this.setState({
+                allquestion:data
+            });
+            console.log(data);
+        })
+        
         this.props.dismissHead();
     }
     
