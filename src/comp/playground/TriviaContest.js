@@ -130,7 +130,8 @@ class TriviaContest extends Component {
                             leaveContest={this.leaveContest}
                             showgame={this.state.showgame}
                             dismissHead={this.dismissHead}
-                            roomstring={this.state.roomstring}/>
+                            roomstring={this.state.roomstring}
+                            socket={this.socket}/>
                 </div>
             )
         }
