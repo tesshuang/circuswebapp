@@ -4,6 +4,7 @@ import EaterGame from './eater/EaterGame';
 import EaterRole from './eater/EaterRole';
 import EaterRoom from './eater/EaterRoom';
 import mySocket from 'socket.io-client';
+import Connect from  './Connect.js';
 
 class PizzaEater extends Component {
     constructor(props){
@@ -17,7 +18,8 @@ class PizzaEater extends Component {
                 require("../../images/eater/pizza1.svg"),
                 require("../../images/eater/eater.svg")
             ],
-            gameusers:[]
+            gameusers:[],
+            myid:""
         }
         
         this.eaterDisplay = this.eaterDisplay.bind(this);
@@ -25,10 +27,15 @@ class PizzaEater extends Component {
         this.leaveRoom = this.leaveRoom.bind(this);
         this.handleAva = this.handleAva.bind(this);
         this.joinPizza = this.joinPizza.bind(this);
+        this.pickRole = this.pickRole.bind(this);
     }
     
     componentWillUnmount(){
         this.socket.disconnect();
+    }
+    
+    componentDidMount(){
+        
     }
     
     eaterDisplay(arg){
@@ -39,18 +46,21 @@ class PizzaEater extends Component {
     
     joinPizza(roomString){
         
-        this.socket = mySocket("https://pizsocket.herokuapp.com/");
+        this.socket = mySocket(Connect.local3);
         
         this.socket.emit("joinroom", roomString);
         
-        this.socket.on("pizzauser", (data)=>{
+        this.socket.on("userid", (data)=>{
             this.setState({
                 eaterChange:2,
-                gameusers:data
+                myid:data
             })
             console.log(data);
         });
         
+        
+    }
+    pickRole(){
         
     }
     
@@ -62,8 +72,21 @@ class PizzaEater extends Component {
     
     handleAva(arg){
         this.setState({
-            gameava:arg,
+            gameava:arg.ava,
             eaterChange:3
+        })
+        var player ={
+            id:this.state.myid,
+            role: arg.role,
+            name:this.state.gameperson,
+            ava:arg.ava
+        }
+        this.socket.emit("pickrole", player);
+        
+        this.socket.on("pizzauser",(data)=>{
+            this.setState({
+                gameusers:data
+            })
         })
     }
     
@@ -95,7 +118,8 @@ class PizzaEater extends Component {
                             eaterDisplay={this.eaterDisplay}
                             handleName={this.handleName}
                             gamebank={this.state.gamebank}
-                            handleAva={this.handleAva}/>
+                            handleAva={this.handleAva}
+                            pickRole={this.pickRole}/>
                 </div>
             )
         }else if(this.state.eaterChange === 3){
@@ -105,7 +129,10 @@ class PizzaEater extends Component {
                             gameperson={this.state.gameperson}
                             gamebank={this.state.gamebank}
                             gameava={this.state.gameava}
-                            leaveRoom={this.leaveRoom}/>
+                            leaveRoom={this.leaveRoom}
+                            socket={this.socket}
+                            gameusers={this.state.gameusers}
+                            myid={this.state.myid}/>
                 </div>
             )
         }

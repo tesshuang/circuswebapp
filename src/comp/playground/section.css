@@ -451,3 +451,20 @@
 .cont_upper{
     height: 100px;
 }
+.sidearea{
+    float: left;
+    height: 100vh;
+    width: 20vw;
+    background-color: #f4eacd;
+}
+.gamearea{
+    background-color: #f9f5e9;
+    float: right;
+    height: 100vh;
+    width:80vw;
+    cursor: none;
+}
+.moving{
+    position: absolute;
+    
+}

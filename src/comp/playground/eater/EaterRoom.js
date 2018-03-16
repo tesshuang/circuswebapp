@@ -24,7 +24,7 @@ class EaterRoom extends Component {
                 <img className="btnimg" src={require("../../../images/eater/vege.png")} alt="pizzaslice"/>
                 
             </button>
-            <button className="pizzabtn" onClick={this.props.joinPizza.bind(this,"pizzaRoom")}>
+            <button className="pizzabtn" onClick={this.props.joinPizza.bind(this,"cheeseRoom")}>
                 <img className="btnimg" src={require("../../../images/eater/cheese.png")} alt="pizzaslice"/>
                 
             </button>

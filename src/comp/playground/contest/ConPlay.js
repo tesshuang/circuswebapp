@@ -75,33 +75,38 @@ class ConPlay extends Component {
         });
         var ansobj ={
             index: "",
-            key:""
+            key:"",
+            id:""
         }
         if(this.refs.ans1.checked){
             ansobj ={
                 index: this.state.myindex,
-                key:this.refs.ans1.value
+                key:this.refs.ans1.value,
+                id:this.props.myid
             }
             this.socket.emit("answer", ansobj);
             console.log(this.refs.ans1.value);
         }else if(this.refs.ans2.checked){
             ansobj ={
                 index: this.state.myindex,
-                key:this.refs.ans2.value
+                key:this.refs.ans2.value,
+                id:this.props.myid
             }
             this.socket.emit("answer", ansobj);
             console.log(this.refs.ans2.value);
         }else if(this.refs.ans3.checked){
             ansobj ={
                 index: this.state.myindex,
-                key:this.refs.ans3.value
+                key:this.refs.ans3.value,
+                id:this.props.myid
             }
             this.socket.emit("answer", ansobj);
             console.log(this.refs.ans3.value);
         }else{
             ansobj ={
                 index: this.state.myindex,
-                key:this.refs.ans4.value
+                key:this.refs.ans4.value,
+                id:this.props.myid
             }
             this.socket.emit("answer", ansobj);
             console.log(this.refs.ans4.value);

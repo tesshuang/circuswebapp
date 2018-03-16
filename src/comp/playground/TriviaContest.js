@@ -19,7 +19,8 @@ class TriviaContest extends Component {
             ],
             conusers:[],
             showgame:false,
-            roomstring:""
+            roomstring:"",
+            myid:""
         }
         
         this.joinCon = this.joinCon.bind(this);
@@ -49,13 +50,12 @@ class TriviaContest extends Component {
         
         this.socket.emit("joinroom", usrobj);
         
-        /*this.socket.on("userjoined", (data)=>{
+        this.socket.on("userjoined", (data)=>{
             this.setState({
-                joincontest:true,
-                conusers:data
+                myid:data
             })
             console.log(data);
-        });*/
+        });
         
         this.socket.on("waiting",(data)=>{
             alert("waiting for your competitor");
@@ -131,7 +131,8 @@ class TriviaContest extends Component {
                             showgame={this.state.showgame}
                             dismissHead={this.dismissHead}
                             roomstring={this.state.roomstring}
-                            socket={this.socket}/>
+                            socket={this.socket}
+                            myid={this.state.myid}/>
                 </div>
             )
         }
