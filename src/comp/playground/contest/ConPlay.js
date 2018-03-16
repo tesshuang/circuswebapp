@@ -37,6 +37,9 @@ class ConPlay extends Component {
                 playscore2:newpoints2
             });*/
         })
+        
+        
+        
     }
     
     startGame(){
@@ -105,12 +108,19 @@ class ConPlay extends Component {
         }
         
         
+        
     }
     
     render() {
         var comp = null;
         var allqs = null;
         var startgame = null;
+        if(this.state.myindex >= 5){
+            console.log(this.state.myindex);
+            this.socket.emit("total1", this.state.playscore1);
+            this.socket.emit("total2", this.state.playscore2);
+        }
+        
         
         if(this.props.showgame === true){
             startgame =(
