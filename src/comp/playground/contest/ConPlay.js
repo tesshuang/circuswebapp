@@ -20,7 +20,7 @@ class ConPlay extends Component {
         
         this.socket.on("points",(data)=>{
             console.log(data,this.props.conusers);
-            
+            console.log(data[Object.keys(data)[0]]);
             if(data.id === this.props.conusers[0].id){
                 var newpoints1 = this.state.playscore1 + data.usrpoint;
                 this.setState({
@@ -32,12 +32,15 @@ class ConPlay extends Component {
                     playscore2:newpoints2
                 });
             }
+            
+            
             /*this.setState({
                 playscore1:newpoints1,
                 playscore2:newpoints2
             });*/
         })
         
+
         
         
     }
