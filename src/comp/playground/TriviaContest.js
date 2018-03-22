@@ -20,7 +20,7 @@ class TriviaContest extends Component {
             conusers:[],
             showgame:false,
             roomstring:"",
-            myid:""
+            myid:null
         }
         
         this.joinCon = this.joinCon.bind(this);
@@ -46,7 +46,7 @@ class TriviaContest extends Component {
             roomstring:roomString
         })
          
-        this.socket = mySocket(Connect.dev4);
+        this.socket = mySocket(Connect.local4);
         
         this.socket.emit("joinroom", usrobj);
         

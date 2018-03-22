@@ -20,27 +20,23 @@ class ConPlay extends Component {
         
         this.socket.on("points",(data)=>{
             console.log(data,this.props.conusers);
-            console.log(data[Object.keys(data)[0]]);
-            if(data.id === this.props.conusers[0].id){
-                var newpoints1 = this.state.playscore1 + data.usrpoint;
-                this.setState({
-                    playscore1:newpoints1
-                });
-            }else if((data.id === this.props.conusers[1].id)){
-                var newpoints2 = this.state.playscore2 + data.usrpoint;
-                this.setState({
-                    playscore2:newpoints2
-                });
-            }
             
             
-            /*this.setState({
-                playscore1:newpoints1,
-                playscore2:newpoints2
-            });*/
+            var player1 = Object.keys(data).filter(score => score === this.props.conusers[0].id);
+            
+            var player2 = Object.keys(data).filter(score => score === this.props.conusers[1].id);
+            
+            this.setState({
+                playscore1:data[player1],
+                playscore2:data[player2]
+            });
+/*            
+            console.log("player1: "+player1+" P1score: "+data[player1]);
+            console.log("player2: "+player2+" P2score: "+data[player2]);*/
+
         })
         
-
+        
         
         
     }
@@ -125,8 +121,7 @@ class ConPlay extends Component {
         var startgame = null;
         if(this.state.myindex >= 5){
             console.log(this.state.myindex);
-            this.socket.emit("total1", this.state.playscore1);
-            this.socket.emit("total2", this.state.playscore2);
+            this.socket.emit("gameend", this.props.myid);
         }
         
         
