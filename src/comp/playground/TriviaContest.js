@@ -30,7 +30,17 @@ class TriviaContest extends Component {
         this.dismissHead = this.dismissHead.bind(this);
     }
     componentWillUnmount(){
+        this.socket.on("userleft", (data)=>{
+           this.setState({
+               conusers:data
+           }) 
+        });
         this.socket.disconnect();
+        
+    }
+    
+    componentDidMount(){
+        
     }
     
     joinCon(roomString){

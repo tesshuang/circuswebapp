@@ -9,7 +9,7 @@ class EaterRoom extends Component {
         
         
     }
-
+    
     render() {
 
         return (

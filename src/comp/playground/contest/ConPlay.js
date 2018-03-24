@@ -74,55 +74,52 @@ class ConPlay extends Component {
         });
         var ansobj ={
             index: "",
-            key:"",
-            id:""
+            key:""
         }
         if(this.refs.ans1.checked){
             ansobj ={
                 index: this.state.myindex,
-                key:this.refs.ans1.value,
-                id:this.props.myid
+                key:this.refs.ans1.value
             }
             this.socket.emit("answer", ansobj);
             console.log(this.refs.ans1.value);
         }else if(this.refs.ans2.checked){
             ansobj ={
                 index: this.state.myindex,
-                key:this.refs.ans2.value,
-                id:this.props.myid
+                key:this.refs.ans2.value
             }
             this.socket.emit("answer", ansobj);
             console.log(this.refs.ans2.value);
         }else if(this.refs.ans3.checked){
             ansobj ={
                 index: this.state.myindex,
-                key:this.refs.ans3.value,
-                id:this.props.myid
+                key:this.refs.ans3.value
             }
             this.socket.emit("answer", ansobj);
             console.log(this.refs.ans3.value);
         }else{
             ansobj ={
                 index: this.state.myindex,
-                key:this.refs.ans4.value,
-                id:this.props.myid
+                key:this.refs.ans4.value
             }
             this.socket.emit("answer", ansobj);
             console.log(this.refs.ans4.value);
         }
         
-        
+        console.log(this.state.myindex);
+        if(this.state.myindex >= 4){
+            console.log(this.state.myindex);
+            this.socket.emit("gameend", this.props.myid);
+        }
         
     }
     
     render() {
+        
         var comp = null;
         var allqs = null;
         var startgame = null;
-        if(this.state.myindex >= 5){
-            console.log(this.state.myindex);
-            this.socket.emit("gameend", this.props.myid);
-        }
+        
         
         
         if(this.props.showgame === true){

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mySocket from 'socket.io-client';
+import Connect from  '../Connect.js';
 
 class StiBoard extends Component {
     constructor(props){
@@ -34,7 +35,7 @@ class StiBoard extends Component {
     componentDidMount(){
 
         
-        this.socket = mySocket("https://midautumnfestivalcard.herokuapp.com/");
+        this.socket = mySocket(Connect.local2);
         
         this.socket.on("stickeruser", (data)=>{
            this.setState({
@@ -49,7 +50,7 @@ class StiBoard extends Component {
         });
         
         this.socket.on("newmove", (data)=>{
-            /*console.log(data);*/
+            console.log(data.id);
             this.refs["u"+data.id].style.left = data.x+"px";
             this.refs["u"+data.id].style.top = data.y+"px";
             this.refs["u"+data.id].src = data.src;
@@ -106,6 +107,7 @@ class StiBoard extends Component {
                 id:this.state.myid,
                 src:this.refs["u"+this.state.myid].src
             }
+            console.log(this.state.myid);
             this.socket.emit("mymove", mymove);
             
 

@@ -9,6 +9,7 @@ class EaterRole extends Component {
         
     }
 
+    
     render() {
 
         return (

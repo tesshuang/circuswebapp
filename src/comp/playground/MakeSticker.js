@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StiFace from './stickers/StiFace';
 import StiBoard from './stickers/StiBoard';
 
+
 class MakeSticker extends Component {
     constructor(props){
         super(props);
