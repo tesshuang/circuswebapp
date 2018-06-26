@@ -56,7 +56,7 @@ class TriviaContest extends Component {
             roomstring:roomString
         })
          
-        this.socket = mySocket(Connect.local4);
+        this.socket = mySocket(Connect.dev4);
         
         this.socket.emit("joinroom", usrobj);
         

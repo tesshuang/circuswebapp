@@ -49,7 +49,7 @@ class PizzaEater extends Component {
             eaterChange:2
         });
         
-        this.socket = mySocket(Connect.local3);
+        this.socket = mySocket(Connect.dev3);
         
         this.socket.emit("joinroom", roomString);
         
