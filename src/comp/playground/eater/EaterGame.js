@@ -16,7 +16,7 @@ class EaterGame extends Component {
             this.refs["u"+data.id].style.left = data.x+"px";
             this.refs["u"+data.id].style.top = data.y+"px";
             this.refs["u"+data.id].src = data.src;
-            console.log(data.id);
+            // console.log(data.id);
         });
         
         
@@ -33,16 +33,14 @@ class EaterGame extends Component {
                 id:this.props.myid,
                 src: this.refs["u"+this.props.myid].src
             });
-            console.log(this.props.myid);
+            // console.log(this.props.myid);
         });
         
         
     }
     
     render() {
-        
-        
-        console.log(this.props.gameusers);
+        // console.log(this.props.gameusers);
         var allusers = this.props.gameusers.map((obj,i)=>{
             var myava = obj.ava;
             return(

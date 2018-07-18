@@ -39,7 +39,6 @@ class Landing extends Component {
         tl
             .to(this.refs.tess, 1, {x:100, ease:Power1.easeOut})
             .to(this.refs.tessBio, 0.5, {opacity:1, ease:Power2.easeIn}, '-=0.8');
-        console.log("hi");
         this.setState({
             hiClick1:true
         })
@@ -50,7 +49,6 @@ class Landing extends Component {
         tl
             .to(this.refs.yuqi, 1, {x:-100, ease:Power1.easeOut})
             .to(this.refs.yuqiBio, 0.5, {opacity:1, ease:Power2.easeIn}, '-=0.8');
-        console.log("hi");
         this.setState({
             hiClick2:true
         })
@@ -65,7 +63,6 @@ class Landing extends Component {
             .to(this.refs.leftfence, 1.5, {x:-1000, ease:Power3.easeOut},'-=1.2');
         /*TweenLite.to(balloon1, 2, {y:-1000, ease:Power1.easeIn});
         TweenLite.to(balloon2, 2, {y:-1000, delay:1});*/
-        console.log("board");
         
         this.setState({
             seClick:true

@@ -19,9 +19,7 @@ class ConPlay extends Component {
         this.socket = this.props.socket;
         
         this.socket.on("points",(data)=>{
-            console.log(data,this.props.conusers);
-            
-            
+            // console.log(data,this.props.conusers);
             var player1 = Object.keys(data).filter(score => score === this.props.conusers[0].id);
             
             var player2 = Object.keys(data).filter(score => score === this.props.conusers[1].id);
@@ -30,15 +28,7 @@ class ConPlay extends Component {
                 playscore1:data[player1],
                 playscore2:data[player2]
             });
-/*            
-            console.log("player1: "+player1+" P1score: "+data[player1]);
-            console.log("player2: "+player2+" P2score: "+data[player2]);*/
-
         })
-        
-        
-        
-        
     }
     
     startGame(){
@@ -62,7 +52,7 @@ class ConPlay extends Component {
             this.setState({
                 allquestion:data
             });
-            console.log(data);
+            // console.log(data);
         })
         
         this.props.dismissHead();
@@ -82,33 +72,33 @@ class ConPlay extends Component {
                 key:this.refs.ans1.value
             }
             this.socket.emit("answer", ansobj);
-            console.log(this.refs.ans1.value);
+            // console.log(this.refs.ans1.value);
         }else if(this.refs.ans2.checked){
             ansobj ={
                 index: this.state.myindex,
                 key:this.refs.ans2.value
             }
             this.socket.emit("answer", ansobj);
-            console.log(this.refs.ans2.value);
+            // console.log(this.refs.ans2.value);
         }else if(this.refs.ans3.checked){
             ansobj ={
                 index: this.state.myindex,
                 key:this.refs.ans3.value
             }
             this.socket.emit("answer", ansobj);
-            console.log(this.refs.ans3.value);
+            // console.log(this.refs.ans3.value);
         }else{
             ansobj ={
                 index: this.state.myindex,
                 key:this.refs.ans4.value
             }
             this.socket.emit("answer", ansobj);
-            console.log(this.refs.ans4.value);
+            // console.log(this.refs.ans4.value);
         }
         
         console.log(this.state.myindex);
         if(this.state.myindex >= 4){
-            console.log(this.state.myindex);
+            // console.log(this.state.myindex);
             this.socket.emit("gameend", this.props.myid);
         }
         

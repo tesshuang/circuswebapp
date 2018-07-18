@@ -64,7 +64,7 @@ class TriviaContest extends Component {
             this.setState({
                 myid:data
             })
-            console.log(data);
+            // console.log(data);
         });
         
         this.socket.on("waiting",(data)=>{
@@ -83,7 +83,7 @@ class TriviaContest extends Component {
                 conusers:data,
                 showgame:true
             });
-            console.log(data);
+            // console.log(data);
         });
         
         this.socket.on("toomany",()=>{

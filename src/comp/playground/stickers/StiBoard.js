@@ -76,22 +76,6 @@ class StiBoard extends Component {
             this.refs["u"+data.id].width = data.width+"px";
         });
         
-/*        this.refs.stiDisplay.addEventListener("mousedown",(ev)=>{
-            mouseDown = true;
-            ev.preventDefault();
-            curImg = this;
-            console.log(curImg);
-        });
-        
-        this.refs.stiDisplay.addEventListener("mouseup",(ev)=>{
-             mouseDown = false;
-            curImg= null;
-        });*/
-        /*            if(mouseDown == true && curImg != null){
-                curImg.style.left = (ev.pageX - curImg.offsetWidth/2)+"px";
-                curImg.style.top = (ev.pageY - curImg.offsetHeight/2)+"px";
-
-            }*/
         
         this.refs.stiDisplay.addEventListener("mousemove", (ev)=>{
             if(this.state.myid === null){

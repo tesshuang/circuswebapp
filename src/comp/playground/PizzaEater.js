@@ -57,7 +57,7 @@ class PizzaEater extends Component {
             this.setState({
                 myid:data
             })
-            console.log(data);
+            // console.log(data);
         });
         
         
@@ -109,7 +109,7 @@ class PizzaEater extends Component {
                 eaterChange:3,
                 gameusers:data
             });
-            console.log(data);
+            // console.log(data);
         });
         
         this.socket.on("toomany",()=>{

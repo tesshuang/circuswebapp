@@ -7,7 +7,6 @@ class ChatIn extends Component {
         this.handleMsg = this.handleMsg.bind(this);
         this.sendMsg = this.sendMsg.bind(this);
         this.leaveChat = this.leaveChat.bind(this);
-        this.userLeave = this.userLeave.bind(this);
     }
     
     componentDidMount(){
@@ -22,13 +21,10 @@ class ChatIn extends Component {
     }
     
     leaveChat(arg){
-        this.userLeave();
         this.props.leaveChat(arg);
         /*this.props.displaySection(arg);*/
     }
-    userLeave(){
-        this.props.userLeave();
-    }
+
     render() {
         var allusers = this.props.allusers.map((obj,i)=>{
             return (

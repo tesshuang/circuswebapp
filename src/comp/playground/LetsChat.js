@@ -29,7 +29,6 @@ class LetsChat extends Component {
         this.handleMsg = this.handleMsg.bind(this);
         this.sendMsg = this.sendMsg.bind(this);
         this.leaveChat = this.leaveChat.bind(this);
-        this.userLeave = this.userLeave.bind(this);
     }
     
     componentWillUnmount(){
@@ -49,11 +48,11 @@ class LetsChat extends Component {
             }
             
             this.socket = mySocket("https://circussocket.herokuapp.com/");
-            console.log(usrobj);
+            // console.log(usrobj);
             this.socket.emit("usrinfo", usrobj);
             
             this.socket.on("cuser",(data)=>{
-                console.log(data);
+                // console.log(data);
                 this.setState({
                     allusers:data
                 });
@@ -71,13 +70,6 @@ class LetsChat extends Component {
             alert("Please type in your name before enter to the chatroom.");
         }
         
-    }
-    userLeave(){
-        console.log("leave chat room");
-        /*this.socket.disconnect();*/
-/*        this.socket = mySocket("http://localhost:4005");
-        var leftuser = this.state.usrname;
-        this.socket.emit("usrleft", leftuser);*/
     }
     leaveChat(arg){
         
@@ -113,7 +105,7 @@ class LetsChat extends Component {
         
     }
     render() {
-        console.log(this.state.allusers);
+        // console.log(this.state.allusers);
         var comp = null;
         if(this.state.joincheck === false){
             comp =(
@@ -133,8 +125,7 @@ class LetsChat extends Component {
                             sendMsg={this.sendMsg}
                             allmsg={this.state.allmsg}
                             avatarbank={this.state.avatarbank}
-                            leaveChat={this.leaveChat}
-                            userLeave={this.userLeave}/>
+                            leaveChat={this.leaveChat}/>
                 </div>
             )
         }
