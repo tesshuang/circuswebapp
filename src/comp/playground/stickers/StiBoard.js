@@ -35,7 +35,7 @@ class StiBoard extends Component {
     componentDidMount(){
 
         
-        this.socket = mySocket(Connect.local2);
+        this.socket = mySocket(Connect.dev2);
         
         this.socket.on("stickeruser", (data)=>{
            this.setState({
