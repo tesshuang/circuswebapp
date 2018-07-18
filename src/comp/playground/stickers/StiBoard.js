@@ -50,7 +50,7 @@ class StiBoard extends Component {
         });
         
         this.socket.on("newmove", (data)=>{
-            console.log(data.id);
+            // console.log(data.id);
             this.refs["u"+data.id].style.left = data.x+"px";
             this.refs["u"+data.id].style.top = data.y+"px";
             this.refs["u"+data.id].src = data.src;
@@ -107,7 +107,7 @@ class StiBoard extends Component {
                 id:this.state.myid,
                 src:this.refs["u"+this.state.myid].src
             }
-            console.log(this.state.myid);
+            // console.log(this.state.myid);
             this.socket.emit("mymove", mymove);
             
 
@@ -130,14 +130,14 @@ class StiBoard extends Component {
     }
     
     leaveSticker(arg){
-        console.log('user left');
+        // console.log('user left');
         this.props.leaveSticker(arg);
         this.socket.disconnect();
     }
     
     updateSize(evt){
         if(evt.key === 'Enter'){
-            console.log("You've entered");
+            // console.log("You've entered");
             
             this.setState({
                 imgsize:evt.target.value
@@ -146,7 +146,7 @@ class StiBoard extends Component {
     }
     
     pickItem(ev){
-        console.log("pickup");
+        // console.log("pickup");
         this.socket.emit("picksticker", {
                    x:ev.pageX,
                    y:ev.pageY,
@@ -166,10 +166,10 @@ class StiBoard extends Component {
                    width:this.state.imgsize
                };
         this.socket.emit("dropsticker", dropmove);
-        console.log("dropdown",dropmove);
+        // console.log("dropdown",dropmove);
     }
     render() {
-        console.log(this.state.stiusers, this.state.myid);
+        // console.log(this.state.stiusers, this.state.myid);
         var allsusers = this.state.stiusers.map((obj,i)=>{
            return(
             <img ref={"u"+obj} src={this.state.myimg1} width={60} className="allSusers" key={i} alt="users"/>
@@ -188,7 +188,7 @@ class StiBoard extends Component {
                 <img src={obj.src} key={i} style={mystyle} className="allSusers2" alt="stickers" onMouseDown={this.pickItem} onMouseUp={this.dropItem}/>
             )
         })
-        console.log(this.state.imgsize);
+        // console.log(this.state.imgsize);
         return (
           <div>
             <div className="sti_control">
